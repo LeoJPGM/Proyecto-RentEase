@@ -1,0 +1,143 @@
+:root{
+    --colorPrimario: #13b6f6;
+    --colorSecundario: #09acec;
+
+    --colorFondo: #75d4fa;
+
+    --colorBlanco: #fff;
+    --colorNegro: #1f1f1f;
+
+    --fuentePrimaria: 'Mukta', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+/** Complementos **/
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+/** Globales **/
+
+a{
+    text-decoration: none;
+}
+
+/** Index **/
+
+/** Header **/
+
+.barra{
+    background-color: var(--colorPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra__menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo__nombre{
+    font-family: var(--fuentePrimaria);
+    font-size: 4rem;
+    color: var(--colorNegro);
+}
+
+.texto__usuario{
+    font-family: var(--fuentePrimaria);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.navegacion{
+    background-color: var(--colorSecundario);
+    font-family: var(--fuentePrimaria);
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--colorNegro);
+}
+
+/** Register **/
+
+.contenedor--register{
+    display: flex;
+    width: 100%;
+    font-family: var(--fuentePrimaria);
+}
+
+.contenedor__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 35rem;
+    background-color: red;
+}
+
+form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form__titulo{
+    grid-column: 1/ 3;
+}
+
+.inputbox{
+    padding: 0.5rem;
+}
+
+.inputbox-cedula, input{
+    grid-column: 1 / 3;
+    width: 100%;
+}
+
+.inputbox-fecha, input{
+    grid-column: 1 / 3;
+    width: 100%;
+}
+
+.button__registrar{
+    margin-top: 1rem;
+    grid-column: 1 / 3;
+}
+
+.contenedor__aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 35rem;
+    background-color: blue;
+}
