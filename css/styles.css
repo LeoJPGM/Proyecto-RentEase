@@ -92,7 +92,11 @@ a{
 
 .contenedor--register{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    border: 1.5px solid grey;
+    border-radius: 10px;
     font-family: var(--fuentePrimaria);
 }
 
@@ -102,7 +106,7 @@ a{
     align-items: center;
     width: 50%;
     height: 35rem;
-    background-color: red;
+    background-color: var(--colorBlanco);
 }
 
 form{
@@ -112,6 +116,7 @@ form{
 
 .form__titulo{
     grid-column: 1/ 3;
+    font-size: 2.5rem;
 }
 
 .inputbox{
@@ -128,7 +133,7 @@ form{
     width: 100%;
 }
 
-.button__registrar{
+.button__register{
     margin-top: 1rem;
     grid-column: 1 / 3;
 }
@@ -139,5 +144,5 @@ form{
     align-items: center;
     width: 50%;
     height: 35rem;
-    background-color: blue;
+    background-color: var(--colorSecundario);
 }
