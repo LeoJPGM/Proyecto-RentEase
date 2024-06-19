@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Register</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/login-register.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="col-1">
+            <div class="main-title">
+                <h1>RENT<span>EASE</span></h1>
+            </div>
+            <p class="eslogan">Simplificando tu búsqueda de alquiler, conectándote con los mejores apartamentos a los mejores precios</p>
+        </div>
+        <div class="col-2">
+            <div class="btn-box">
+                <button class="btn btn-2" id="register">Crear cuenta</button>
+                <button class="btn btn-1" id="login">Iniciar Sesión</button>
+            </div>
+
+            <!-- Login Container -->
+            <div class="login-form">
+                <div class="form-title">
+                    <span>Iniciar Sesión</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <i class='bx bxs-envelope icon'></i>
+                        <input type="text" class="input-field" id="email-login" placeholder="Email">
+                    </div>
+                    <div class="input-box">
+                        <i class='bx bxs-lock icon' ></i>
+                        <input type="password" class="input-field" id="password-login" placeholder="Contraseña">
+                    </div>
+                    <div class="input-box">
+                        <button class="input-ingresar" id="logear">
+                            <span>Ingresar</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Container -->
+            <div class="register-form">
+                <div class="form-title">
+                    <span>Registrate</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="nombre" placeholder="Nombre">
+                        <i class='bx bx-pencil icon'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="apellido" placeholder="Apellido">
+                        <i class='bx bxs-pencil icon'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="email" placeholder="Email">
+                        <i class='bx bxs-envelope icon'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" id="fecha" class="input-field">
+                        <i class='bx bxs-cake icon'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="password" placeholder="Contraseña">
+                        <i class='bx bxs-lock-open icon' ></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="confpassword" placeholder="Confirmar Contraseña">
+                        <i class='bx bxs-lock icon' ></i>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-ingresar" id="registrar">
+                            <span>Registrarse</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/register-login.js"></script>
+</body>
+</html>

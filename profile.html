@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="./css/profile.css">
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor">
-            <div class="barra">
-                <a href="index.html" class="logo">
-                    <h1 class="logo__nombre no-margin">RentEase</h1>
-                </a>
-                <div class="barra__menu">
-                    <h1 class="texto__usuario">Hola, Julian Alvarado</h1>
-                </div>
+    <header>
+        <div class="head">
+            <div class="Logo">
+              <H1>RentEase</H1> 
             </div>
-            <nav class="navegacion">
-                <a href="index.html" class="navegacion__enlace">Inicio</a>
-                <a href="all-flats.html" class="navegacion__enlace">Listado de propiedades</a>
-                <a href="new-flat.html" class="navegacion__enlace">Agregar propiedades</a>
-                <a href="profile.html" class="navegacion__enlace">Perfil de usuario</a>
-            </nav>
-        </div>
+                <nav class="navbar">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./all-flats.html"> Lista de Pisos</a>
+                    <a href="./new-flats.html">Agregar Pisos</a>
+                    <a href="./profile.html">Perfil</a>
+                    <a href="#" id="salir">Exit</a>
+                </nav>
+            <div class="user-menu">
+               <span class="username">Usuario</span>
+            
+           </div>
+        
     </header>
+    <div class="profile-container">
+        <div class="profile-picture">
+            <img id="profileImage" src="./img/face2.jpg" alt="Foto del Usuario">
+        </div>
+        
+        <div class="profile-details">
+            <div id="userName" contenteditable="true">Nombre del Usuario</div>
+            <div id="userEmail" contenteditable="true"><strong>Correo:</strong> usuario@gmail.com</div>
+            <div id="userPhone" contenteditable="true"><strong>Teléfono:</strong> 0984400386</div>
+            <div id="userAddress" contenteditable="true"><strong>Dirección:</strong> Calle Falsa 123, Ciudad, Quito</div>
+            <div id="userBirthdate" contenteditable="true"><strong>Fecha de Nacimiento:</strong> 01/01/1990</div>
+    </div>
+    <script src="./scripts/view-name.js"></script>
 </body>
 </html>
