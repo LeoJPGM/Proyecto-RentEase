@@ -1,0 +1,156 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Slider de imagenes */
+
+.slider-container{
+    overflow: hidden;
+    position: relative;
+    top: 68px;
+    height: 450px;
+    width: 1000px;
+}
+
+@-webkit-keyframes slide_animation{
+    0% {left: 0px;}
+    10% {left: 0px;}
+    20% {left: 1200px;}
+    30% {left: 1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left: 0px;}
+}
+
+.slide-img{
+    width: 3600px;
+    height: 450px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 33s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+}
+
+.img-container-1{
+    height: 450px;
+    width: 1100px;
+    position: relative;
+    float: left;
+    background-image: url(../img/departamentos/wp2449358-apartment-wallpapers.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-container-2{
+    height: 450px;
+    width: 1100px;
+    position: relative;
+    float: left;
+    background-image: url(../img/departamentos/wp2449419-apartment-wallpapers.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-container-3{
+    height: 450px;
+    width: 1200px;
+    position: relative;
+    float: left;
+    background-image: url(../img/departamentos/wp2449447-apartment-wallpapers.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Contenedor FavFlats */
+.favflats-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+.favflats-list{
+    display: flex;
+    position: relative;
+    top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 15px 20px;
+}
+
+.flat{
+    width: 22%;
+    height: 350px;
+    box-shadow: 0px 0px 10px rgb(101, 101, 101);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.flat:hover{
+    transform: scale(1.05);
+}
+
+.flat-img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 210px;
+}
+
+.flat-img img{
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.flat-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 0 5px;
+}
+
+.flat-info p{
+    font-size: 14px;
+}
+
+.flat-precio-fav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    gap: 130px;
+}
+
+.flat-precio-fav button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.flat-precio-fav i{
+    font-size: 30px;
+}
+
+.flat-precio-fav span{
+    position: relative;
+    top: 5px;
+}
+

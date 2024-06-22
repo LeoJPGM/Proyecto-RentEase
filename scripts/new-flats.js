@@ -7,13 +7,13 @@ btn.addEventListener('click', e =>{
 
 function crearFlat(){
     let cuidad = document.querySelector('.ciudad').value;
-    let nombreCalle = document.querySelector('.name-calle').value;
-    let numeroCalle = document.querySelector('.n-calle').value;
-    let sizeArea = document.querySelector('.size-area').value;
+    let nombreCalle = document.querySelector('.nombre-calle').value;
+    let numeroCalle = document.querySelector('.numero-calle').value;
+    let sizeArea = document.querySelector('.area').value;
     let aireC = document.querySelector('.ac').checked;
     let yearBuild = document.querySelector('.year-build').value;
-    let precioRenta = document.querySelector('.precio').value;
-    let fecha = document.querySelector('.fecha').value;
+    let precioRenta = document.querySelector('.precio-renta').value;
+    let fecha = document.querySelector('.fecha-disponible').value;
 
     let listaFlats = JSON.parse(localStorage.getItem('Flats'));
 
@@ -22,12 +22,28 @@ function crearFlat(){
     let favFlats = [];
 
     if(listaFlats){
-        flats = JSON.stringify([...listaFlats, {'ciudad': cuidad, 'nombre-calle': nombreCalle, 'numero-calle': numeroCalle, 'size-area': sizeArea, 'aire-acondicionado': aireC, 'year-build': yearBuild, 'precio': precioRenta, 'fecha': fecha, 'usuarioID': id}]);
+        flats = JSON.stringify([...listaFlats, {'ciudad': cuidad, 'nombreCalle': nombreCalle, 'numeroCalle': numeroCalle, 'area': sizeArea, 'ac': aireC, 'yearBuild': yearBuild, 'precio': precioRenta, 'fecha': fecha, 'usuarioID': id, 'flatID': generarIdIncremental()}]);
         favFlats = flats;
     }else{
-        flats = JSON.stringify([{'ciudad': cuidad, 'nombre-calle': nombreCalle, 'numero-calle': numeroCalle, 'size-area': sizeArea, 'aire-acondicionado': aireC, 'year-build': yearBuild, 'precio': precioRenta, 'fecha': fecha, 'usuarioID': id}]);
+        flats = JSON.stringify([{'ciudad': cuidad, 'nombreCalle': nombreCalle, 'numeroCalle': numeroCalle, 'area': sizeArea, 'ac': aireC, 'yearBuild': yearBuild, 'precio': precioRenta, 'fecha': fecha, 'usuarioID': id, 'flatID': generarIdIncremental()}]);
         favFlats = flats;
     }
     localStorage.setItem('Flats', flats);
     localStorage.setItem('FavFlats', favFlats);
+    location.reload();
+}
+
+function obtenerUltimoId(){
+    return parseInt(localStorage.getItem('flatID') || '0', 10);
+}
+
+function guardarUltimoId(id){
+    localStorage.setItem('flatID', id.toString());
+}
+
+function generarIdIncremental(){
+    const ultimoId = obtenerUltimoId();
+    const nuevoId = ultimoId + 1;
+    guardarUltimoId(nuevoId);
+    return nuevoId;
 }

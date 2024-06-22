@@ -1,71 +1,161 @@
-const mostrarFlats = document.querySelector('.flats');
+const mostrarFlats = document.querySelector('.allflats-list');
 
 const ciudad = document.querySelector('#ciudad');
-const min = document.querySelector('#minimo');
-const max = document.querySelector('#maximo');
+const precioMin = document.querySelector('#precioMin');
+const precioMax = document.querySelector('#precioMaximo');
+const areaMin = document.querySelector('#areaMin');
+const areaMax = document.querySelector('#areaMax');
 
 const flats = JSON.parse(localStorage.getItem('Flats')); 
 
 const datosBusqueda = {
     ciudad : '',
-    minimo : '',
-    maximo : ''
+    preciomin : '',
+    preciomax : '',
+    areamin: '',
+    areamax: ''
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    allFlats(flats);
+document.addEventListener('DOMContentLoaded', () =>{
+    mostrarAllFlats(flats);
 });
 
-ciudad.addEventListener('change', e => {
+ciudad.addEventListener('change', e =>{
     datosBusqueda.ciudad = e.target.value;
 
     if(datosBusqueda.ciudad === 'Seleccione'){
-        allFlats(flats);
+        mostrarAllFlats(flats)
         return;
     }
 
-    filtrarFlats();
+    filtrarAllFlats();
 });
 
-min.addEventListener('change', e => {
-    datosBusqueda.minimo = e.target.value;
+precioMin.addEventListener('change', e =>{
+    datosBusqueda.preciomin = e.target.value;
+
+    if(datosBusqueda.preciomin === 'Seleccione'){
+        mostrarAllFlats(flats);
+        return;
+    }
+    
+    filtrarAllFlats();
 });
 
-max.addEventListener('change', e => {
-    datosBusqueda.maximo = e.target.value;
+precioMax.addEventListener('change', e =>{
+    datosBusqueda.preciomax = e.target.value;
+
+    if(datosBusqueda.preciomax === 'Seleccione'){
+        mostrarAllFlats(flats);
+        return;
+    }
+
+    filtrarAllFlats();
 });
 
-function allFlats(flats){
+areaMin.addEventListener('change', e =>{
+    datosBusqueda.areamin = e.target.value;
+
+    if(datosBusqueda.areamin === 'Seleccione'){
+        mostrarAllFlats(flats);
+        return;
+    }
+    
+    filtrarAllFlats();
+});
+
+areaMax.addEventListener('change', e =>{
+    datosBusqueda.areamax = e.target.value;
+
+    if(datosBusqueda.areamax === 'Seleccione'){
+        mostrarAllFlats(flats);
+        return;
+    }
+
+    filtrarAllFlats();
+});
+
+function mostrarAllFlats(flats){
 
     limpiarHTML();
 
     flats.forEach(flat =>{
-        const {ciudad, precio, fecha} = flat;
-        const flatHTML = document.createElement('p');
+        let nuevoAC;
+        const {ciudad, precio, fecha, nombreCalle, numeroCalle, area, ac, flatID} = flat;
+        const flatsHTML = document.createElement('p');
 
-        flatHTML.textContent = `
-            Ciudad: ${ciudad} - Precio: ${precio} - Fecha: ${fecha}
+        if(ac){
+            nuevoAC = 'Si';
+        }else{
+            nuevoAC = 'No';
+        }
+
+        flatsHTML.innerHTML = `
+            <div class="flat-img">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=35b70a7e8a17a71896996cd55d84f742cd15724c3aebaed0d9b5ba19c53c430b&o=" alt="IMG">
+            </div>
+            <div class="flat-info">
+                <h3>${ciudad}</h3>
+                <p>${nombreCalle}, ${numeroCalle}</p>
+                <p>Tamaño del area: ${area}m</p> 
+                <p>Aire acondicionado: ${nuevoAC}</p>
+                <p>Fecha de disponibilidad: ${fecha}</p>
+                <div class="flat-precio-fav">
+                    <button class="button-fav" id="${flatID}"><i class='bx bx-heart'></i></button>
+                    <span>Desde $${precio}</span>
+                </div>
+            </div>
         `;
-
-        mostrarFlats.appendChild(flatHTML);
+        mostrarFlats.appendChild(flatsHTML);
     });
 }
 
-function filtrarFlats(){
-    const resultado = flats.filter(filtrarCiudad);
+function filtrarAllFlats(){
+    const resultado = flats.filter(filtrarCiudad).filter(filtrarPrecioMin).filter(filtrarPrecioMax).filter(filtrarAreaMin).filter(filtrarAreaMax);
 
     if(resultado.length){
-        allFlats(resultado);
+        mostrarAllFlats(resultado);
     }else{
-        console.log('error');
+        noResultado();
     }
+}
+
+function noResultado(){
+    limpiarHTML();
+
+    const noResultado = document.createElement('div');
+    noResultado.textContent = 'No hay resultados';
+    mostrarFlats.appendChild(noResultado);
 }
 
 function filtrarCiudad(flat){
     if(datosBusqueda.ciudad){
         return flat.ciudad === datosBusqueda.ciudad;
     }
-    console.log('No se encontro');
+}
+
+function filtrarPrecioMin(flat){
+    if(datosBusqueda.preciomin){
+        return flat.precio >= datosBusqueda.preciomin;
+    }
+}
+
+function filtrarPrecioMax(flat){
+    if(datosBusqueda.preciomax){
+        return flat.precio <= datosBusqueda.preciomax;
+    }
+}
+
+function filtrarAreaMin(flat){
+    if(datosBusqueda.areamin){
+        return flat.area >= datosBusqueda.areamin;
+    }
+}
+
+function filtrarAreaMax(flat){
+    if(datosBusqueda.areamax){
+        return flat.area <= datosBusqueda.areamax;
+    }
 }
 
 function limpiarHTML(){
@@ -73,3 +163,7 @@ function limpiarHTML(){
         mostrarFlats.removeChild(mostrarFlats.firstChild);
     }
 }
+
+
+
+

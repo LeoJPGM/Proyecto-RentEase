@@ -3,40 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Usuario</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/profile.css">
+
+    <!--- Google Fonts --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Perfil</title>
 </head>
 <body>
     <header>
-        <div class="head">
-            <div class="Logo">
-              <H1>RentEase</H1> 
-            </div>
-                <nav class="navbar">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./all-flats.html"> Lista de Pisos</a>
-                    <a href="./new-flats.html">Agregar Pisos</a>
-                    <a href="./profile.html">Perfil</a>
-                    <a href="#" id="salir">Exit</a>
-                </nav>
-            <div class="user-menu">
-               <span class="username">Usuario</span>
-            
-           </div>
-        
-    </header>
-    <div class="profile-container">
-        <div class="profile-picture">
-            <img id="profileImage" src="./img/face2.jpg" alt="Foto del Usuario">
+        <a href="./index.html" class="logo">
+            RENT<span>EASE</span>
+        </a>
+        <ul class="navlist">
+            <li><a href="./index.html">Pisos favoritos</a></li>
+            <li><a href="./all-flats.html">Todos los pisos</a></li>
+            <li><a href="./new-flats.html">Crear un piso</a></li>
+            <li><a href="#" id="salir">Salir</a></li>
+        </ul>
+        <div class="contenedor-derecho">
+            <a href="./profile.html" class="username">Usuario</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-        
-        <div class="profile-details">
-            <div id="userName" contenteditable="true">Nombre del Usuario</div>
-            <div id="userEmail" contenteditable="true"><strong>Correo:</strong> usuario@gmail.com</div>
-            <div id="userPhone" contenteditable="true"><strong>Teléfono:</strong> 0984400386</div>
-            <div id="userAddress" contenteditable="true"><strong>Dirección:</strong> Calle Falsa 123, Ciudad, Quito</div>
-            <div id="userBirthdate" contenteditable="true"><strong>Fecha de Nacimiento:</strong> 01/01/1990</div>
-    </div>
+    </header>
+    <section class="profile">
+        <div class="profile-text">
+            <h1>Información personal</h1>
+            <br>
+            <p>En esta sección podras editar toda tu información personal.</p>
+
+            <div class="profile-main">
+                <i class='bx bx-user' ></i>
+                <span class="username">Usuario</span>
+            </div>
+
+            <div class="profile-form">
+                <div class="input-box">
+                    <label for="Nombre">Nombre</label> <input type="text" class="nombre">
+                </div>
+                <div class="input-box">
+                    <label for="Apellido">Apellido</label> <input type="text" class="apellido">
+                </div>
+                <div class="input-box">
+                    <label for="Email">Email</label> <input type="text" class="email">
+                </div>
+                <div class="input-box">
+                    <label for="Password">Contraseña</label> <input type="password" class="password">
+                </div>
+                <div class="input-box">
+                    <label for="ConfPassword">Confirmar Contraseña</label> <input type="password" class="confpassword">
+                </div>
+                <div class="input-box">
+                    <label for="fecha">Fecha de nacimiento</label> <input type="date" class="fecha">
+                </div>
+                <div class="button-box">
+                    <button class="guardar">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./scripts/view-name.js"></script>
+    <script src="./scripts/profile-update.js"></script>
 </body>
 </html>

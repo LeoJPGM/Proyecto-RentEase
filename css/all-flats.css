@@ -1,86 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background:url(./img/fondo1.webp);
-    }
-    
-.head {
+.allflats-container{
     display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    background-color:rgba(14, 80, 29, 0.8);
-    position: fixed;
     width: 100%;
-    z-index: 100;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    top: 80px;
 }
 
-h1 {
-    color: #fff;
-    margin-left: 10px;
-    font-size: 30px;
-}
-
-.navbar {
+.allflats-list{
     display: flex;
-    margin-right: 40px;
-    padding: 0.5rem;
-    border-radius: 20px;
+    position: relative;
+    top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 15px 20px;
+}
+
+.flat{
+    width: 22%;
+    height: 350px;
+    box-shadow: 0px 0px 10px rgb(101, 101, 101);
+    border-radius: 8px;
     cursor: pointer;
-    z-index: 2;
+    transition: .5s ease;
 }
 
-.logo {
-    width: 10%;
-    margin-left: 0px;
-    border-radius: 50px;
+.flat:hover{
+    transform: scale(1.05);
 }
 
-
-.navbar a {
-    display: inline-block;
-    padding: 20px 20px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: normal;
-    font-weight: bold;
-    text-align: left;
-    font-size: 15px;
-}
-
-.navbar a:hover {
-    background: #194d4d;
-    border-radius: 50px;
-}
-.user-menu {
+.flat-img{
     display: flex;
-    align-items: c enter;
-    position: relative; 
+    justify-content: center;
+    width: 100%;
+    height: 210px;
 }
 
-.username {
-    color: #fff;
-    margin-right: 10px;
+.flat-img img{
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.flat-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    padding: 0 5px;
+}
+
+.flat-info p{
     font-size: 14px;
 }
 
-.header {
+.flat-precio-fav{
+    width: 100%;
     display: flex;
-    align-items: center;
-    height: 60vh;
-    background-size: cover;
+    justify-content: space-between;
+    padding: 5px 0;
+    gap: 130px;
 }
-    
+
+.flat-precio-fav button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.flat-precio-fav i{
+    font-size: 30px;
+}
+
+.flat-precio-fav span{
+    position: relative;
+    top: 5px;
+}

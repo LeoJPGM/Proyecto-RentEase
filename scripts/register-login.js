@@ -100,11 +100,11 @@ function logout(){
 }
 
 function obtenerUltimoId(){
-    return parseInt(localStorage.getItem('ultimoId') || '0', 10);
+    return parseInt(localStorage.getItem('userID') || '0', 10);
 }
 
 function guardarUltimoId(id){
-    localStorage.setItem('ultimoId', id.toString());
+    localStorage.setItem('userID', id.toString());
 }
 
 function generarIdIncremental(){

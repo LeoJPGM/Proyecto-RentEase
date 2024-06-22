@@ -1,14 +1,7 @@
 const btn = document.querySelector('.guardar');
-const textoUsuario = document.querySelector('.texto__usuario');
-const nombrePerfil = document.querySelector('.nombre-perfil');
 const usuarios = JSON.parse(localStorage.getItem('Usuarios'));
 const favFlats = JSON.parse(localStorage.getItem('FavFlats'));
 
-
-const {nombre, apellido} = usuario;
-
-nombrePerfil.textContent = `${nombre} ${apellido}`;
-textoUsuario.textContent = `Hola, ${nombre} ${apellido}`;
 
 btn.addEventListener('click', () => {
     actualizarDatos();
@@ -49,6 +42,7 @@ function actualizarDatos(){
     }
     localStorage.setItem('Usuarios', updateUsuario);
     localStorage.setItem('Usuario', updateToken);
+    location.reload();
 }
 
 function validaciones(nombre, apellido, email, exEmail, fecha, password, confPassword){

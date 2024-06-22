@@ -8,7 +8,7 @@
 }
 
 body{
-    background: url(https://images.hdqwalls.com/download/blue-forest-minimal-4k-kz-1920x1080.jpg);
+    background: url(https://th.bing.com/th/id/R.c2b47e1bdc644f892a50d58a3404eb37?rik=KLMJ3ygmKrtTzw&pid=ImgRaw&r=0);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -28,7 +28,7 @@ body{
     height: 600px;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
     overflow: hidden;
 }
 

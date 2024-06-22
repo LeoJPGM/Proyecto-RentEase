@@ -1,49 +1,76 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agregar Pisos</title>
-<link rel="stylesheet" href="./css/new-flats.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/new-flats.css">
+
+    <!--- Google Fonts --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Crear un piso</title>
 </head>
 <body>
     <header>
-        <div class="head">
-            <div class="Logo">
-              <H1>RentEase</H1> 
-            </div>
-                <nav class="navbar">
-                    <a href="./index.html">Inicio</a>
-                    <a href="./all-flats.html"> Lista de Pisos</a>
-                    <a href="./new-flats.html">Agregar Pisos</a>
-                    <a href="./profile.html">Perfil</a>
-                    <a href="#" id="salir">Exit</a>
-                </nav>
-            <div class="user-menu">
-               <span class="username">Usuario</span>
-            
-           </div>
-        
-    </header>
-   
-    <main>
-        <div >
-        <h2 class=" title"> Agregar tu Piso es muy facil</h2>
-       </div>
-        <div class="contenedor">
-            <div class="item" contenteditable="true" data-placeholder="Ciudad">Ciudad</div>
-            <div class="item" contenteditable="true" data-placeholder="Nombre de Calle">Nombre de Calle</div>
-            <div class="item" contenteditable="true" data-placeholder="Número de Casa">Número de Casa</div>
-            <div class="item" contenteditable="true" data-placeholder="Área">Área</div>
-            <div class="item" contenteditable="true" data-placeholder="Aire Acondicionado">Aire Acondicionado</div>
-            <div class="item" contenteditable="true" data-placeholder="Precio de Renta">Precio de Renta</div>
-            <div class="item" contenteditable="true" data-placeholder="Año de Construcción">Año de Construcción</div>
-            <div class="item" contenteditable="true" data-placeholder="Registro (dd/mm/aaaa)">Registro (dd/mm/aaaa)</div>
+        <a href="./index.html" class="logo">
+            RENT<span>EASE</span>
+        </a>
+        <ul class="navlist">
+            <li><a href="./index.html">Pisos favoritos</a></li>
+            <li><a href="./all-flats.html">Todos los pisos</a></li>
+            <li><a href="./new-flats.html">Crear un piso</a></li>
+            <li><a href="#" id="salir">Salir</a></li>
+        </ul>
+        <div class="contenedor-derecho">
+            <a href="./profile.html" class="username">Usuario</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-    </main>
-    
-    <button id="agregar">Agregar</button>
-    
-   <script src="./scripts/view-name.js"></script>
+    </header>
+    <section class="newflat">
+        <div class="newflat-text">
+            <h1>Crea tu propio piso</h1>
+            <br>
+            <p>En esta sección podrás crear un piso que estés arrendando.</p>
+
+            <div class="newflat-main">
+                <i class='bx bx-building-house'></i>
+            </div>
+
+            <div class="newflat-form">
+                <div class="input-box">
+                    <label for="Ciudad">Ciudad</label> <input type="text" class="ciudad">
+                </div>
+                <div class="input-box">
+                    <label for="Nombre de la calle">Nombre de la calle</label> <input type="text" class="nombre-calle">
+                </div>
+                <div class="input-box">
+                    <label for="Numero de calle">Número de la calle</label> <input type="text" class="numero-calle">
+                </div>
+                <div class="input-box">
+                    <label for="Tamaño del area">Tamaño del area</label> <input type="text" class="area">
+                </div>
+                <div class="input-box" id="ac-box">
+                    <label for="Aire acondicionado">¿Tiene aire acondicionado?</label> <input type="checkbox" class="ac">
+                </div>
+                <div class="input-box">
+                    <label for="Año de construcción">Año de construcción</label> <input type="text" class="year-build">
+                </div>
+                <div class="input-box">
+                    <label for="Precio de renta">Precio de renta</label> <input type="text" class="precio-renta">
+                </div>
+                <div class="input-box">
+                    <label for="Fecha de disponibilidad">Fecha de disponibilidad</label> <input type="text" class="fecha-disponible">
+                </div>
+                <div class="button-box">
+                    <button class="agregar">Agregar Piso</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./scripts/view-name.js"></script>
+    <script src="./scripts/new-flats.js"></script>
 </body>
 </html>
